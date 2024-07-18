@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.DATABASE_URL || 3000;
 require('dotenv').config();
 
 const gamesRoutes = require('./routes/API/games');
-const userRoutes = require('./routes/API/users');
+// const usersRoutes = require('./routes/API/users');
 app.use(express.json());
 
 app.use('/api', gamesRoutes);
-app.use('/api', userRoutes);
+// app.use('/api', usersRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
