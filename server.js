@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.DATABASE_URL || 3000;
+const PORT = process.env.HEROKU_POSTGRESQL_CHARCOAL_URL || 3000;
 require('dotenv').config();
 
 const gamesRoutes = require('./routes/API/games');
